@@ -13,8 +13,41 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Exercise Finder App",
-  description: "Find exercises based on your preferences",
+  title: "Search exercises by name, muscle group, or equipment | Serhii Shevchenko",
+  description: "Free Tool to search exercises by name, muscle group, or equipment.",
+  keywords: "weight loss, biohacking, fitness, exercises by muscle group, exercises by equipment, health, science-based nutrition",
+  authors: [{ name: "Serhii Shevchenko" }],
+  icons: {
+    icon: "/favicon.ico",
+  },
+  openGraph: {
+    title: "Search exercises by name, muscle group, or equipment | Serhii Shevchenko",
+    description: "Free Tool to search exercises by name, muscle group, or equipment.",
+    url: "https://serhiishevchenko.com/exercises-by-name-muscle-group-equipment",
+    siteName: "SerhiiShevchenko.com",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Search exercises by name, muscle group, or equipment | Serhii Shevchenko",
+    description: "Free Tool to search exercises by name, muscle group, or equipment.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    noimageindex: false,
+    noarchive: false,
+    nosnippet: false,
+  },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+    viewportFit: "cover",
+  },
 };
 
 export default function RootLayout({
