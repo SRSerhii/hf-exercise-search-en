@@ -70,7 +70,7 @@ export default function LandingPage() {
                                 Free Resources <ChevronDown className="ml-1 w-4 h-4" />
                             </Link>
                             <div className="dropdown-content">
-                                <Link href="https://serhiishevchenko.com/exercises-by-name-muscle-group-equipment/" className="font-normal transition-colors hover:text-green-400">
+                                <Link href="https://exercises.serhiishevchenko.com/" className="font-normal transition-colors hover:text-green-400 !text-green-700">
                                     Free tool: Exercises by name, muscle group, equipment
                                 </Link>
                                 <Link href="https://serhiishevchenko.com/free-pdf-science-based-oil-free-vegan-recipes-in-30-min-or-less/" className="font-normal transition-colors hover:text-green-400">

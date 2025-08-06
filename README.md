@@ -6,14 +6,18 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 1. Sign up on [Rapidapi.com](https://rapidapi.com/)
 
 2. Visit the link below to get your API key:
-https://rapidapi.com/mortimerbrian135/api/exerciseapi3
+https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb
 
 3. In the root of project folder create new file with the following name: .env.local
 
 4. Open the file .env.local and enter your API key:
-RAPIDAPI_KEY = "ENTER_YOUR_API_KEY_HERE"
+RAPIDAPI_KEY = ENTER_YOUR_API_KEY_HERE
 
-5. Run the development server:
+5. In the same .env.local file add other variables if needed:
+NEXT_PUBLIC_GTM_ID=ENTER_YOUR_GTM_ID_HERE
+NEXT_PUBLIC_TAWK_TO_SRC=ENTER_YOUR_TAWK_TO_SRC_HERE
+
+6. Run the development server:
 
 ```bash
 npm run dev
