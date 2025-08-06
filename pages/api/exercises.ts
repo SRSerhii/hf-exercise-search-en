@@ -45,6 +45,8 @@ export default async function handler(
       apiUrl = `https://${RAPIDAPI_HOST}/exercises?limit=${FETCH_ALL_LIMIT}`;
     }
 
+    console.log('Fetching from:', apiUrl, 'with key:', RAPIDAPI_KEY ? 'present' : 'missing');
+
     const response = await fetch(apiUrl, {
       method: 'GET',
       headers: {

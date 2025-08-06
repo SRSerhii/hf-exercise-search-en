@@ -94,14 +94,25 @@ function ExerciseSearch() {
         return;
       }
 
-      const transformedData: Exercise[] = apiData.map((apiExercise: RawExerciseApiResponse) => ({
-        id: apiExercise.id || `${apiExercise.name?.replace(/\s+/g, '-').toLowerCase()}-${Math.random()}`,
-        name: apiExercise.name || 'Unnamed Exercise',
-        muscleGroup: apiExercise.target || 'N/A',
-        equipment: apiExercise.equipment || 'N/A',
-        instructions: Array.isArray(apiExercise.instructions) ? apiExercise.instructions.join(' ') : apiExercise.instructions || 'No instructions provided.',
-        gifUrl: apiExercise.gifUrl
-      }));
+      const transformedData: Exercise[] = apiData.map((apiExercise: RawExerciseApiResponse) => {
+        // Use id if present, otherwise generate a deterministic key from static properties
+        const fallbackId = [
+          apiExercise.name,
+          apiExercise.target,
+          apiExercise.equipment
+        ].filter(Boolean).join('-').replace(/\s+/g, '-').toLowerCase() || 'unknown-id';
+
+        return {
+          id: apiExercise.id || fallbackId,
+          name: apiExercise.name || 'Unnamed Exercise',
+          muscleGroup: apiExercise.target || 'N/A',
+          equipment: apiExercise.equipment || 'N/A',
+          instructions: Array.isArray(apiExercise.instructions)
+            ? apiExercise.instructions.join(' ')
+            : apiExercise.instructions || 'No instructions provided.',
+          gifUrl: apiExercise.gifUrl
+        };
+      });
 
       setFilteredExercises(transformedData);
       setTotalPages(Math.ceil(responseData.totalCount / PAGE_SIZE));
